@@ -1,15 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>First</title>
-    <link rel="stylesheet" type="text/css" href="style.css">  
+    <title>Log In</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
 
 </head>
+
 <body>
-    <h1>Tai sao</h1>
+    <header>
+        <h1>LHPOJ</h1>
+    </header>
+
+    <section class="container">
+        <form id="myForm">
+            <h1>Add User</h1>
+            <div class="msg"></div>
+            <div>
+                <label for="name">Name:</label>
+                <input type="text" id="name" placeholder="Điều tên vô đây đi mà, làm ơn">
+            </div>
+
+            <div>
+                <label for="email">Email:</label>
+                <input type="text" id="email" placeholder="Email của cậu nên được điền ở đây này">
+            </div>
+
+            <input class="btn" type="button" value="Nhấn vào đây này, cảm ơn nhiều">
+        </form>
+
+        <ul id="users"></ul>
+    </section>
 
     <script src="app.js"></script>
 </body>
+
 </html>
