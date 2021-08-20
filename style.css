@@ -3,7 +3,7 @@
 }
 
 body {
-  background-color: darkblue;
+  background-color: #06266f;
   font-family: Arial, Helvetica, sans-serif;
   display: flex;
   flex-direction: column;
@@ -24,6 +24,16 @@ h3 {
   width: 500px;
 }
 
+.manual {
+  background-color: #4671d5;
+  color: white;
+  border-radius: 50px;
+  padding: 10px 20px;
+  margin: 0 5px 10px 0;
+  font-size: 20px;
+  display: inline-block;
+}
+
 textarea {
   border: none;
   display: block;
@@ -36,7 +46,7 @@ textarea {
 }
 
 .tag {
-  background-color: orange;
+  background-color: #6c8cd5;
   color: white;
   border-radius: 50px;
   padding: 10px 20px;
@@ -48,3 +58,4 @@ textarea {
 .tag.highlight {
   background-color: darkcyan;
 }
+
