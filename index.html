@@ -1,40 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Log In</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-
+    <link rel="stylesheet" href="style.css"/>
+    <title>Random.dcmm</title>
 </head>
-
 <body>
-    <header>
-        <h1>LHPOJ</h1>
-    </header>
+    <div class="container">
+        <h3>Gõ vào đây bất cứ thứ gì bạn muốn random, cách nhau bởi ", " sau đó bấm enter, đmm
+        </h3>
 
-    <section class="container">
-        <form id="myForm">
-            <h1>Add User</h1>
-            <div class="msg"></div>
-            <div>
-                <label for="name">Name:</label>
-                <input type="text" id="name" placeholder="Điều tên vô đây đi mà, làm ơn">
-            </div>
+        <textarea id="textarea" placeholder="Nhập vào đây này thằng oắt"></textarea>
 
-            <div>
-                <label for="email">Email:</label>
-                <input type="text" id="email" placeholder="Email của cậu nên được điền ở đây này">
-            </div>
+        <div id="tags">
+            <span class="tag">choice 1</span>
+            <span class="tag highlight">choice 2</span>
+            <span class="tag">choice 3</span>    
+        </div>
 
-            <input class="btn" type="button" value="Nhấn vào đây này, cảm ơn nhiều">
-        </form>
-
-        <ul id="users"></ul>
-    </section>
-
+    </div>
     <script src="app.js"></script>
 </body>
-
 </html>

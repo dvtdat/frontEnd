@@ -1,11 +1,66 @@
-const formInput = document.querySelector('#myForm');
-const nameInput = document.querySelector('#name');
-const emailInput = document.querySelector('#email');
-const msgInput = document.querySelector('.msg');
+const tagsEl = document.getElementById('tags')
+const textarea = document.getElementById('textarea')
 
-formInput.addEventListener('submit', onSubmit);
+textarea.focus()
 
-function onSubmit(e){
+textarea.addEventListener('keyup', (e) => {
+    createTags(e.target.value)
+
+    if (e.key === 'Enter') {
+        setTimeout(() => {
+            e.target.value = ''
+        }, 10)
+        randomSelect()
+    }
+})
+
+function randomSelect() {
+    const times = 30
+    const hopTime = 100;
+
+    const interval = setInterval(() => {
+        const randomTag = pickRandomTag()
+
+        highlightTag(randomTag)
+
+        setTimeout(() => {
+            unHighlightTag(randomTag)
+        }, hopTime)
+    }, hopTime)
+
+    setTimeout(() => {
+        clearInterval(interval)
+
+        setTimeout(() => {
+            const randomTag = pickRandomTag()
+
+            highlightTag(randomTag)
+        }, hopTime)
+    }, times * hopTime)
+}
+
+function pickRandomTag() {
+    const tags = document.querySelectorAll('.tag')
+    return tags[Math.floor(Math.random() * tags.length)]
+}
+
+function highlightTag(tag) {
+    tag.classList.add('highlight')
+}
+
+function unHighlightTag(tag) {
+    tag.classList.remove('highlight')
+}
+
+function createTags(input) {
+    const tags = input.split(',').filter(tag => tag.trim() != '').map(tag => tag.trim())
     
-    console.log(nameInput.value);
+    tagsEl.innerHTML = ''
+
+    tags.forEach(tag => {
+        const tagEl = document.createElement('span')
+        tagEl.classList.add('tag')
+        tagEl.innerText = tag
+        tagsEl.appendChild(tagEl)
+    })
 }
